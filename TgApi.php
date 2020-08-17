@@ -7,7 +7,10 @@
 namespace Tg;
 
 class TgApi {
-    public function Token() {
-        return 'Yes';
+    private $url = "https://api.telegram.org/bot";
+    private $token = null;
+    
+    function __construct($toket) {
+        $this->token = $toket;
     }
 }

@@ -59,7 +59,7 @@ class TgApi {
         $ch = curl_init();
         $getParams = empty($get) ? '' : '?' . $get;
         curl_setopt($ch, CURLOPT_URL, $this->url . $this->token . "/" . $method . $getParams);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
         curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -67,8 +67,6 @@ class TgApi {
         \curl_close($ch);
         
         $arr = json_decode($output, true);
-        
-        return true;
     }
     
     /**

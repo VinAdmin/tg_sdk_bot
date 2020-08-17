@@ -102,13 +102,13 @@ class TgApi {
      * @param int $chat_id
      * @param array $param['message_id']
      * @param array $param['text']
+     * @param array $param['parse_mode']
+     * @param array $param['reply_markup']
      */
     public function editMessageText($chat_id, $param)
     {
-        $params['chat_id'] = $chat_id;
-        $params['message_id'] = $param['message_id'];
-        $params['text'] = $param['text'];
+        $param['chat_id'] = $chat_id;
         
-        $this->post('editMessageText', $params);
+        $this->post('editMessageText', $param);
     }
 }

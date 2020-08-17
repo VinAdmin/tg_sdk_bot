@@ -4,7 +4,6 @@
 <h2>Установка</h2>
 <code>composer require vinadmin/tg_sdk_bot</code>
 <h4>Пример</h4>
-
 <pre class="php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span>
 <span style="color: #000000; font-weight: bold;">use</span> Tg\TgApi<span style="color: #339933;">;</span>
 &nbsp;

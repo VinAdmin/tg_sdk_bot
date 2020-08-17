@@ -59,19 +59,28 @@ class TgApi {
         $ch = curl_init();
         $getParams = empty($get) ? '' : '?' . $get;
         curl_setopt($ch, CURLOPT_URL, $this->url . $this->token . "/" . $method . $getParams);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
         curl_setopt($ch, CURLOPT_HEADER, 0);
         $output = curl_exec($ch);
-        \curl_close($ch);
+        curl_close($ch);
         
         $arr = json_decode($output, true);
+        return $arr;
     }
     
     /**
+     * Информация о боте
      * 
-     * @return array
+     * @return $array['ok']
+     * @return $array['result']['id']
+     * @return $array['result']['is_bot']
+     * @return $array['result']['first_name']
+     * @return $array['result']['username']
+     * @return $array['result']['can_join_groups']
+     * @return $array['result']['can_read_all_group_messages']
+     * @return $array['result']['supports_inline_queries']
      */
     public function getMe()
     {

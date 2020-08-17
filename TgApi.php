@@ -95,4 +95,20 @@ class TgApi {
     {
         return $this->post();
     }
+    
+    /**
+     * Редактирование сообщения.
+     * 
+     * @param int $chat_id
+     * @param array $param['message_id']
+     * @param array $param['text']
+     */
+    public function editMessageText($chat_id, $param)
+    {
+        $params['chat_id'] = $chat_id;
+        $params['message_id'] = $param['message_id'];
+        $params['text'] = $param['text'];
+        
+        $this->post('editMessageText', $params);
+    }
 }

@@ -1,3 +1,4 @@
 # tg_sdk_bot
-Api telegram bot<br>
+<h1>Api telegram bot</h1>
+<p>PHP класс оптимизирующий разработку API для телеграмм бота.</p> 
 composer require vinadmin/tg_sdk_bot

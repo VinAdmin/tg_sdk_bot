@@ -1,11 +1,19 @@
 <?php
+namespace Tg;
+
 /**
  * Класс для работы с Api телеграмм бота.
  * 
  * @package TgApi
  * @author Vitaliy Olkhin <ovvitalik@gmail.com>
+ * @property int $chat_id
+ * @property string $username
+ * @property string $last_name
+ * @property string $first_name
+ * @property int $is_bot
+ * @property string $language_code
+ * @property int $data_output_json = false - OBject, true - array
  */
-namespace Tg;
 
 class TgApi {
     private $url = "https://api.telegram.org/bot";
@@ -16,6 +24,7 @@ class TgApi {
     public $first_name = null;
     public $is_bot = null;
     public $language_code = null;
+    public $data_output_json = false;
     
     /**
      * Принимает телеграмм токен.
@@ -66,7 +75,7 @@ class TgApi {
         $output = curl_exec($ch);
         curl_close($ch);
         
-        $arr = json_decode($output, true);
+        $arr = json_decode($output, $this->data_output_json);
         return $arr;
     }
     

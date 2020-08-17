@@ -111,4 +111,20 @@ class TgApi {
         
         $this->post('editMessageText', $param);
     }
+    
+    /*
+     * InlineKeybord
+     * 
+     * @return string $keyboard
+     */
+    public function InlineKeybord($key)
+    {
+        $keyboard = [
+            "inline_keyboard" => [
+                $key
+            ]
+        ];
+        
+        return json_encode($keyboard);
+    }
 }

@@ -63,6 +63,14 @@ class TgApi {
         }
     }
     
+    /**
+     * Curl
+     * 
+     * @param string $method
+     * @param array $params
+     * @param string $get default null
+     * @return array
+     */
     private function post(string $method="getMe", array $params=array(), string $get = null)
     {
         $ch = curl_init();

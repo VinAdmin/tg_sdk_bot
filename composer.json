@@ -3,18 +3,18 @@
     "description": "Telegram SDK Bot",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "authors": [
         {
             "name": "Vitaliy Olkhin",
             "email": "ovvitalik@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {},
     "autoload": {
         "psr-4": {
-            "Tg\\": "/"
+            "Tg\\": "/src/"
         }
     }
 }
